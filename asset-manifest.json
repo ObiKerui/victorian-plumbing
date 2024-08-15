@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/victorian-plumbing/static/css/main.04202412.css",
-    "main.js": "/victorian-plumbing/static/js/main.60507fa5.js",
+    "main.css": "/victorian-plumbing/static/css/main.e7f03928.css",
+    "main.js": "/victorian-plumbing/static/js/main.c6940487.js",
     "static/js/453.4454570b.chunk.js": "/victorian-plumbing/static/js/453.4454570b.chunk.js",
     "index.html": "/victorian-plumbing/index.html",
-    "main.04202412.css.map": "/victorian-plumbing/static/css/main.04202412.css.map",
-    "main.60507fa5.js.map": "/victorian-plumbing/static/js/main.60507fa5.js.map",
+    "main.e7f03928.css.map": "/victorian-plumbing/static/css/main.e7f03928.css.map",
+    "main.c6940487.js.map": "/victorian-plumbing/static/js/main.c6940487.js.map",
     "453.4454570b.chunk.js.map": "/victorian-plumbing/static/js/453.4454570b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.04202412.css",
-    "static/js/main.60507fa5.js"
+    "static/css/main.e7f03928.css",
+    "static/js/main.c6940487.js"
   ]
 }
