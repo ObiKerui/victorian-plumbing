@@ -52,9 +52,9 @@ function ProductList() {
           <Sortby />
           <ProductSummary />
         </div>
-        <div className="grid grid-cols-3 gap-2 pl-4">
+        <div className="grid grid-cols-3 gap-x-2 gap-y-8 pl-4">
           {testProducts.map(product => {
-            return <Product name={product.name} />;
+            return <Product />;
           })}
         </div>
       </div>

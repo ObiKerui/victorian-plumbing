@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, createHashRouter } from 'react-router-dom';
+import { Navigate, RouterProvider, createHashRouter } from 'react-router-dom';
 
 import './index.css';
 import App from './App';
@@ -19,6 +19,10 @@ const router = createHashRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: '',
+        element: <Navigate to="/products" replace />, // Redirect to /products
+      },
       {
         path: '/products',
         element: <ProductList />,
