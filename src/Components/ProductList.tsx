@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 
-const key = 'yj2bV48J40KsBpIMLvrZZ1j1KwxN4u3A83H8IBvI';
+const key = process.env.REACT_APP_VPLUMB_API_KEY;
 const URL = `https://spanishinquisition.victorianplumbing.co.uk/interviews/listings?apikey=${key}`;
 const payload = {
   query: 'toilets',

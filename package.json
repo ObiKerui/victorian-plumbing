@@ -2,6 +2,7 @@
   "name": "victorian-plumb",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://obikerui.github.io/victorian-plumbing",
   "dependencies": {
     "@tanstack/react-query": "^5.51.23",
     "@testing-library/jest-dom": "^5.17.0",
