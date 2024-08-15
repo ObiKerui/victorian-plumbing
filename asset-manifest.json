@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.45baf6b1.css",
-    "main.js": "/static/js/main.650d100f.js",
-    "static/js/453.4454570b.chunk.js": "/static/js/453.4454570b.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/index.html",
-    "main.45baf6b1.css.map": "/static/css/main.45baf6b1.css.map",
-    "main.650d100f.js.map": "/static/js/main.650d100f.js.map",
-    "453.4454570b.chunk.js.map": "/static/js/453.4454570b.chunk.js.map"
+    "main.css": "/victorian-plumbing/static/css/main.45baf6b1.css",
+    "main.js": "/victorian-plumbing/static/js/main.6f3d7f50.js",
+    "static/js/453.4454570b.chunk.js": "/victorian-plumbing/static/js/453.4454570b.chunk.js",
+    "static/media/logo.svg": "/victorian-plumbing/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/victorian-plumbing/index.html",
+    "main.45baf6b1.css.map": "/victorian-plumbing/static/css/main.45baf6b1.css.map",
+    "main.6f3d7f50.js.map": "/victorian-plumbing/static/js/main.6f3d7f50.js.map",
+    "453.4454570b.chunk.js.map": "/victorian-plumbing/static/js/453.4454570b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.45baf6b1.css",
-    "static/js/main.650d100f.js"
+    "static/js/main.6f3d7f50.js"
   ]
 }
