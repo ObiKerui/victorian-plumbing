@@ -9,10 +9,10 @@ function Sortby() {
         className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
       >
         <li>
-          <a>Item 1</a>
+          <button className="btn">Item 1</button>
         </li>
         <li>
-          <a>Item 2</a>
+          <button className="btn">Item 2</button>
         </li>
       </ul>
     </div>
