@@ -24,6 +24,8 @@ jobs:
         run: |
           npm ci
           npm run build
+        env:
+          REACT_APP_VPLUMB_API_KEY: ${{ secrets.REACT_APP_VPLUMB_API_KEY }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
