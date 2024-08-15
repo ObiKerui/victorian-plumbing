@@ -1,14 +1,3 @@
-// image
-// over image -
-// topleft - if sale
-// topright - space saver
-// across bottom - best seller
-// left - brand
-// left - description - right - heart
-// left - price (was)
-// left - in stock
-// left - rating (number)
-
 import { maxLenString } from '../../Utils/Utils';
 import Rating from './Rating';
 import SaleInfo from './SaleInfo';
@@ -82,20 +71,5 @@ function Product(props: tProductProps) {
     </div>
   );
 }
-
-// Product.defaultProps = {
-//   imageSrc:
-//     'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp',
-//   onSale: false,
-//   spaceSaver: false,
-//   bestSeller: false,
-//   brand: 'brand',
-//   description: 'description',
-//   price: '0.00',
-//   previousPrice: '0.00',
-//   inStock: false,
-//   rating: 0,
-//   raw: null,
-// };
 
 export default Product;

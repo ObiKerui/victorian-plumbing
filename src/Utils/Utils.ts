@@ -1,3 +1,6 @@
+import { twMerge } from 'tailwind-merge';
+import { clsx, type ClassValue } from 'clsx';
+
 function maxLenString(desc: string, maxLength: number = 30) {
   let trimmed = desc;
   if (desc.length > maxLength) {
@@ -7,4 +10,8 @@ function maxLenString(desc: string, maxLength: number = 30) {
   return trimmed;
 }
 
-export { maxLenString };
+function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+export { maxLenString, cn };

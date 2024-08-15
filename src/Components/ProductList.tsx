@@ -2,43 +2,13 @@ import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import Sortby from './Sortby';
 import Product from './ProductCard/Product';
-
-const key = process.env.REACT_APP_VPLUMB_API_KEY;
-const URL = `https://spanishinquisition.victorianplumbing.co.uk/interviews/listings?apikey=${key}`;
-const payload = {
-  query: 'toilets',
-  pageNumber: 0,
-  size: 0,
-  additionalPages: 0,
-  sort: 1,
-};
-
-// const apiResponse = z.object({
-//   //   pagination: z.array(z.unknown()),
-//   //   facets: z.array(z.unknown()),
-//   products: z.array(productSchema),
-// });
-
-// async function loadData(url: string, payload: object) {
-//   try {
-//     const response = await axios.post(URL, payload);
-//     if (response.status !== 200) {
-//       throw new Error(response.statusText);
-//     }
-//     console.log('response data: ', response.data);
-//     const parsed = apiResponse.parse(response.data);
-//     return parsed;
-//   } catch (error) {
-//     if (error instanceof z.ZodError) {
-//       // Handle Zod validation errors
-//       console.error('Validation errors:', error.errors);
-//       throw new Error(`Validation error: ${JSON.stringify(error.errors)}`);
-//     } else {
-//       // Handle other errors
-//       throw new Error(`Unexpected error: ${error}`);
-//     }
-//   }
-// }
+import { useSearchParams } from 'react-router-dom';
+import {
+  tProductPayload,
+  URL as PRODUCT_URL,
+  DEFAULT_SORT_BY,
+  sortByOptions,
+} from '../Utils/ProductQuery';
 
 type tProduct = {
   id: string;
@@ -55,27 +25,42 @@ type tAPIResponse = {
 
 async function loadData(url: string, payload: object) {
   try {
-    const response = await axios.post(URL, payload);
+    const response = await axios.post(url, payload);
     if (response.status !== 200) {
       throw new Error(response.statusText);
     }
-    console.log('response data: ', response.data);
     return response.data as tAPIResponse;
   } catch (error) {
     throw new Error(`Unexpected error: ${error}`);
   }
 }
 
+function createParams(sortBy: number) {
+  const payload = {
+    query: 'toilets',
+    pageNumber: 0,
+    size: 0,
+    additionalPages: 0,
+    sort: sortBy,
+  } as tProductPayload;
+  return payload;
+}
+
 function ProductList() {
+  const [searchParams] = useSearchParams();
+
+  const sortBy = +(searchParams.get('sortBy') ?? DEFAULT_SORT_BY);
+
   const {
     isPending,
     error,
     data: productData,
   } = useQuery({
-    queryKey: ['productData'],
-    queryFn: () => loadData(URL, payload),
+    queryKey: ['productData', sortBy],
+    queryFn: () => loadData(PRODUCT_URL, createParams(sortBy)),
     refetchOnMount: false,
     staleTime: 1000 * 60 * 5, // Data is considered fresh for 5 minutes
+    enabled: sortBy >= 1 && sortBy <= Array.from(sortByOptions.keys()).length,
   });
 
   if (isPending) return <div>loading...</div>;

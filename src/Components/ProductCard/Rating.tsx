@@ -7,9 +7,9 @@ function Rating(props: tRatingProps) {
   return (
     <div className="flex flex-row gap-2 align-bottom">
       <div className="flex flex-row items-center">
-        {[0, 1, 2, 3, 4].map(elem => {
+        {[0, 1, 2, 3, 4].map((elem, ith) => {
           return (
-            <div className="rating rating-xs">
+            <div key={ith} className="rating rating-xs">
               <input
                 type="radio"
                 name="rating-5"

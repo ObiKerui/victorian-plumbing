@@ -29,10 +29,10 @@ function App() {
             <div className="pb-4">
               <button
                 type="button"
-                className="btn btn-sm border-black"
+                className="btn btn-sm bg-base-100"
                 onClick={() => setTheme()}
               >
-                set theme
+                Set Theme
               </button>
             </div>
 
