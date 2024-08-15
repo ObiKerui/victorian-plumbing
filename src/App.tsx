@@ -1,33 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
-import { ProductList } from './Components/ProductList';
+import { Outlet, useSearchParams } from 'react-router-dom';
+import { Sidebar } from './Components/Sidebar';
 
 function App() {
+  const [searchParams, setSearchParams] = useSearchParams({
+    theme: 'light',
+  });
+
+  const currTheme = searchParams.get('theme');
+
+  const setTheme = () => {
+    setSearchParams(
+      prev => {
+        prev.set('theme', currTheme === 'light' ? 'dark' : 'light');
+        return prev;
+      },
+      {
+        replace: true,
+      }
+    );
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <header className="text-center">
-        <img src={logo} className="h-32 w-32 animate-spin-slow" alt="logo" />
-        <p className="mt-6 text-lg text-gray-700">
-          Edit{' '}
-          <code className="font-mono text-lg text-gray-900">src/App.tsx</code>{' '}
-          and save to reload.
-        </p>
-        <a
-          className="mt-4 inline-block text-blue-500 hover:text-blue-700 font-semibold"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <h1 className="text-3xl font-bold">
-          Welcome to DaisyUI with Tailwind CSS
-        </h1>
-        <button className="btn btn-primary mt-4">Click Me</button>
-      </header>
-      <main>
-        <ProductList />
-      </main>
+    <div data-theme={currTheme} className="bg-base-200 mx-auto min-h-screen">
+      <div className="flex flex-row flex-wrap py-4">
+        <aside className="w-full px-2 sm:w-1/3 md:w-1/4">
+          <div className="sticky top-0 w-full p-4">
+            <div className="pb-4">
+              <button
+                type="button"
+                className="btn btn-sm border-black"
+                onClick={() => setTheme()}
+              >
+                set theme
+              </button>
+            </div>
+
+            <Sidebar />
+          </div>
+        </aside>
+        <main role="main" className="flex w-full px-2 pt-1 sm:w-2/3 md:w-3/4">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 }
