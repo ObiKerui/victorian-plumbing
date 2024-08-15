@@ -6,21 +6,21 @@ function Sidebar() {
         <input type="radio" name="my-accordion-1" defaultChecked />
         <div className="collapse-title text-xl font-medium">Price</div>
         <div className="collapse-content">
-          <p>hello</p>
+          <p>Still to do...</p>
         </div>
       </div>
       <div className="collapse bg-base-100 rounded-none">
         <input type="radio" name="my-accordion-1" />
         <div className="collapse-title text-xl font-medium">Style</div>
         <div className="collapse-content">
-          <p>hello</p>
+          <p>Still to do...</p>
         </div>
       </div>
       <div className="collapse bg-base-100 rounded-none">
         <input type="radio" name="my-accordion-1" />
         <div className="collapse-title text-xl font-medium">Type</div>
         <div className="collapse-content">
-          <p>hello</p>
+          <p>Still to do...</p>
         </div>
       </div>
     </div>
